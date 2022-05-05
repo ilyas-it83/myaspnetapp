@@ -19,12 +19,20 @@ spec:
         - name: myaspnetapp
           image: mygab22acr.azurecr.io/myaspnetapp:0.1.0
           imagePullPolicy: IfNotPresent
+          resources:
+            limits:
+              cpu: 2000m
+              memory: 512Mi
+            requests:
+              cpu: 100m
+              memory: 64Mi
           ports:
             - containerPort: 80
               protocol: TCP
           env:
             - name: ASPNETCORE_URLS
               value: http://+:80
+     
 ---
 apiVersion: v1
 kind: Service
