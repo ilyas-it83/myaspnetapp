@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: myaspnetapp
-          image: mygab22ACR.azurecr.io/myaspnetapp:v1
+          image: mygab22acr.azurecr.io/myaspnetapp:0.1.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
