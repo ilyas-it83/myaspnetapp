@@ -47,6 +47,7 @@ metadata:
     app: myaspnetapp-stage
     service: myaspnetapp-stage-svc
 spec:
+  type: LoadBalancer
   ports:
     - port: 8080
       targetPort: 8080
