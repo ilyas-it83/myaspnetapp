@@ -5,7 +5,9 @@ on:
     branches: [ main,stage ]
   pull_request:
     branches: [ main,stage ]
-
+env:
+  ## Sets environment variable
+  environment: stage 
 jobs:
 
   build:
@@ -29,5 +31,5 @@ jobs:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
     - run: |
-        docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/myaspnetapp:${{ github.sha }}
-        docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/myaspnetapp:${{ github.sha }}
+        docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/myaspnetapp-${{env.environment}}:${{ github.sha }}
+        docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/myaspnetapp-${{env.environment}}:${{ github.sha }}
