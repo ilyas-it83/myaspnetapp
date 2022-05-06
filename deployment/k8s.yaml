@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: myaspnetapp
-          image: docker pull mygab22acr.azurecr.io/myaspnetapp:0580b1aa73500c650735e417427e5259773b6727
+          image: mygab22acr.azurecr.io/myaspnetapp-prod:2280096714
           imagePullPolicy: IfNotPresent
           resources:
             limits:
