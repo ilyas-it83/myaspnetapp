@@ -6,19 +6,19 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myaspnetapp
+  name: myaspnetapp-stage
   labels:
-    app: myaspnetapp
+    app: myaspnetapp-stage
 spec:
   replicas: 1
   selector:
     matchLabels:
-      service: myaspnetapp
+      service: myaspnetapp-stage-svc
   template:
     metadata:
       labels:
-        app: myaspnetapp
-        service: myaspnetapp
+        app: myaspnetapp-stage
+        service: myaspnetapp-stage-svc
     spec:
       containers:
         - name: myaspnetapp
@@ -44,7 +44,7 @@ kind: Service
 metadata:
   name: myaspnetapp-stage-svc
   labels:
-    app: myaspnetapp
+    app: myaspnetapp-stage
     service: myaspnetapp-stage-svc
 spec:
   ports:
