@@ -23,7 +23,7 @@ spec:
       containers:
         - name: myaspnetapp
           image: mygab22acr.azurecr.io/myaspnetapp-stage:2280095561
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           resources:
             limits:
               cpu: 2000m
