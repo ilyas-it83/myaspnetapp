@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: myaspnetapp
-          image: mygab22acr.azurecr.io/myaspnetapp-prod:2280096714
+          image: mygab22acr.azurecr.io/myaspnetapp-prod:2280363264
           imagePullPolicy: Always
           resources:
             limits:
