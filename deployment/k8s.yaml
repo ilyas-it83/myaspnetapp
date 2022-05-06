@@ -32,24 +32,24 @@ spec:
               cpu: 100m
               memory: 64Mi
           ports:
-            - containerPort: 80
+            - containerPort: 8080
               protocol: TCP
           env:
             - name: ASPNETCORE_URLS
-              value: http://+:80
+              value: http://+:8080
      
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: myaspnetapp-svc
+  name: myaspnetapp-stage-svc
   labels:
     app: myaspnetapp
-    service: myaspnetapp-svc
+    service: myaspnetapp-stage-svc
 spec:
   ports:
-    - port: 80
-      targetPort: 80
+    - port: 8080
+      targetPort: 8080
       protocol: TCP
   selector:
-    service: myaspnetapp
+    service: myaspnetapp-stage-svc
